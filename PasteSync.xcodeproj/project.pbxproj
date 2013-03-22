@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		169E96D516FD151F00DD2769 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C6216FD0D0400154B80 /* MainMenu.xib */; };
 		16E94C4E16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
 		16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5616FD0D0400154B80 /* InfoPlist.strings */; };
 		16E94C5A16FD0D0400154B80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C5916FD0D0400154B80 /* main.m */; };
 		16E94C5E16FD0D0400154B80 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5C16FD0D0400154B80 /* Credits.rtf */; };
 		16E94C6116FD0D0400154B80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C6016FD0D0400154B80 /* AppDelegate.m */; };
-		16E94C6416FD0D0400154B80 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C6216FD0D0400154B80 /* MainMenu.xib */; };
 		16E94C6C16FD0D0400154B80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C6B16FD0D0400154B80 /* SenTestingKit.framework */; };
 		16E94C6D16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
 		16E94C7516FD0D0400154B80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C7316FD0D0400154B80 /* InfoPlist.strings */; };
@@ -226,7 +226,7 @@
 			files = (
 				16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */,
 				16E94C5E16FD0D0400154B80 /* Credits.rtf in Resources */,
-				16E94C6416FD0D0400154B80 /* MainMenu.xib in Resources */,
+				169E96D516FD151F00DD2769 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +452,7 @@
 				16E94C7D16FD0D0400154B80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E94C7E16FD0D0400154B80 /* Build configuration list for PBXNativeTarget "PasteSyncTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +461,7 @@
 				16E94C8016FD0D0400154B80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
