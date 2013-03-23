@@ -11,7 +11,6 @@
 		16E94C4E16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
 		16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5616FD0D0400154B80 /* InfoPlist.strings */; };
 		16E94C5A16FD0D0400154B80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C5916FD0D0400154B80 /* main.m */; };
-		16E94C5E16FD0D0400154B80 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5C16FD0D0400154B80 /* Credits.rtf */; };
 		16E94C6116FD0D0400154B80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C6016FD0D0400154B80 /* AppDelegate.m */; };
 		16E94C6C16FD0D0400154B80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C6B16FD0D0400154B80 /* SenTestingKit.framework */; };
 		16E94C6D16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
@@ -39,7 +38,6 @@
 		16E94C5716FD0D0400154B80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16E94C5916FD0D0400154B80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16E94C5B16FD0D0400154B80 /* PasteSync-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PasteSync-Prefix.pch"; sourceTree = "<group>"; };
-		16E94C5D16FD0D0400154B80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		16E94C5F16FD0D0400154B80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16E94C6016FD0D0400154B80 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		16E94C6316FD0D0400154B80 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				16E94C5616FD0D0400154B80 /* InfoPlist.strings */,
 				16E94C5916FD0D0400154B80 /* main.m */,
 				16E94C5B16FD0D0400154B80 /* PasteSync-Prefix.pch */,
-				16E94C5C16FD0D0400154B80 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,7 +222,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */,
-				16E94C5E16FD0D0400154B80 /* Credits.rtf in Resources */,
 				169E96D516FD151F00DD2769 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,14 +287,6 @@
 				16E94C5716FD0D0400154B80 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		16E94C5C16FD0D0400154B80 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				16E94C5D16FD0D0400154B80 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		16E94C6216FD0D0400154B80 /* MainMenu.xib */ = {

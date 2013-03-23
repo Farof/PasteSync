@@ -14,4 +14,10 @@
 
 @property (strong, nonatomic) IBOutlet NSStatusItem *statusBar;
 
+@property (strong, nonatomic) IBOutlet NSMenuItem *pasteLabel;
+
+@property (strong, nonatomic, readonly) NSString *latestPaste;
+
+- (IBAction)print:(id)sender;
+
 @end
