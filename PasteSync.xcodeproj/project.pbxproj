@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		169E96D516FD151F00DD2769 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C6216FD0D0400154B80 /* MainMenu.xib */; };
+		169E96D716FE1D1900DD2769 /* Roadmap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 169E96D616FE1D1900DD2769 /* Roadmap.rtf */; };
 		16E94C4E16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
 		16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5616FD0D0400154B80 /* InfoPlist.strings */; };
 		16E94C5A16FD0D0400154B80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C5916FD0D0400154B80 /* main.m */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		169E96D616FE1D1900DD2769 /* Roadmap.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Roadmap.rtf; sourceTree = "<group>"; };
 		16E94C4A16FD0D0400154B80 /* PasteSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasteSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E94C4D16FD0D0400154B80 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16E94C5016FD0D0400154B80 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +129,7 @@
 				16E94C5616FD0D0400154B80 /* InfoPlist.strings */,
 				16E94C5916FD0D0400154B80 /* main.m */,
 				16E94C5B16FD0D0400154B80 /* PasteSync-Prefix.pch */,
+				169E96D616FE1D1900DD2769 /* Roadmap.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */,
 				169E96D516FD151F00DD2769 /* MainMenu.xib in Resources */,
+				169E96D716FE1D1900DD2769 /* Roadmap.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
