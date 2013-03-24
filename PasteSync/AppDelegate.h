@@ -19,6 +19,9 @@
 
 @property (strong, nonatomic) PSMonitor *psMonitor;
 
-- (IBAction)print:(id)sender;
+-(IBAction)print:(id)sender;
+-(NSString *)normalizeString:(NSString *)str;
+-(void)updateLabel:(NSString *)str;
+-(void)handleDataChange:(NSNotification *)notification;
 
 @end

@@ -53,6 +53,7 @@
     if (![newData isEqualToString:self.latestData]) {
         NSLog(@"Pasteboard content changed: %@", newData);
         self.latestData = newData;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"dataChanged" object:newData userInfo:nil];
     }
 }
 

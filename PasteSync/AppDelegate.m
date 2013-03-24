@@ -29,16 +29,29 @@
     self.statusBar.menu = self.statusMenu;
     self.statusBar.highlightMode = YES;
 
-    NSString *latest = self.psMonitor.currentData;
-    if (latest != nil) {
-        if (latest.length > 40) {
-            NSLog(@"trim: %@", latest);
-            latest = [latest substringToIndex:40];
-            NSArray *compo = [NSArray arrayWithObjects:latest, @"…", nil];
-            latest = [compo componentsJoinedByString:@""];
-        }
-        self.pasteLabel.title = latest;
+    [self updateLabel:self.psMonitor.currentData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataChange:) name:@"dataChanged" object:nil];
+}
+
+-(NSString *)normalizeString:(NSString *)str {
+    if (str.length > 40) {
+        str = [str substringToIndex:40];
+        NSArray *compo = [NSArray arrayWithObjects:str, @"…", nil];
+        str = [compo componentsJoinedByString:@""];
     }
+    return str;
+}
+
+-(void)updateLabel:(NSString *)str {
+    if (str != nil) {
+        str = [self normalizeString:str];
+        self.pasteLabel.title = str;
+    }
+}
+
+-(void)handleDataChange:(NSNotification *)notification {
+    NSString *str = (NSString*)notification.object;
+    [self updateLabel:[self normalizeString:str]];
 }
 
 -(IBAction)print:(id)sender {
