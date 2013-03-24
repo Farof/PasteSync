@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		169E96D516FD151F00DD2769 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C6216FD0D0400154B80 /* MainMenu.xib */; };
 		169E96D716FE1D1900DD2769 /* Roadmap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 169E96D616FE1D1900DD2769 /* Roadmap.rtf */; };
+		169E96DA16FE81C900DD2769 /* PSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 169E96D916FE81C900DD2769 /* PSMonitor.m */; };
 		16E94C4E16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
 		16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5616FD0D0400154B80 /* InfoPlist.strings */; };
 		16E94C5A16FD0D0400154B80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C5916FD0D0400154B80 /* main.m */; };
@@ -31,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		169E96D616FE1D1900DD2769 /* Roadmap.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Roadmap.rtf; sourceTree = "<group>"; };
+		169E96D816FE81C900DD2769 /* PSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMonitor.h; sourceTree = "<group>"; };
+		169E96D916FE81C900DD2769 /* PSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMonitor.m; sourceTree = "<group>"; };
 		16E94C4A16FD0D0400154B80 /* PasteSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasteSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E94C4D16FD0D0400154B80 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16E94C5016FD0D0400154B80 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 				16E94C6016FD0D0400154B80 /* AppDelegate.m */,
 				16E94C6216FD0D0400154B80 /* MainMenu.xib */,
 				16E94C5416FD0D0400154B80 /* Supporting Files */,
+				169E96D816FE81C900DD2769 /* PSMonitor.h */,
+				169E96D916FE81C900DD2769 /* PSMonitor.m */,
 			);
 			path = PasteSync;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			files = (
 				16E94C5A16FD0D0400154B80 /* main.m in Sources */,
 				16E94C6116FD0D0400154B80 /* AppDelegate.m in Sources */,
+				169E96DA16FE81C900DD2769 /* PSMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

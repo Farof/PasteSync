@@ -13,34 +13,23 @@
 @synthesize statusBar = _statusBar;
 @synthesize statusMenu = _statusMenu;
 @synthesize pasteLabel = _pasteLabel;
-@dynamic latestPaste;
+@synthesize psMonitor = _psMonitor;
 
--(NSString *) latestPaste {
-    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
-    NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
-    NSDictionary *options = [NSDictionary dictionary];
-    NSArray *copiedItems = [pasteboard readObjectsForClasses:classes options:options];
-
-    if (copiedItems != nil && copiedItems.count > 0) {
-        return [copiedItems objectAtIndex:0];
-    }
-
-    return nil;
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+-(void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
 }
 
 -(void) awakeFromNib {
+    self.psMonitor = [[PSMonitor alloc] init];
+
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self.statusBar.title = @"PS";
     // self.statusBar.image =
     self.statusBar.menu = self.statusMenu;
     self.statusBar.highlightMode = YES;
 
-    NSString *latest = self.latestPaste;
+    NSString *latest = self.psMonitor.currentData;
     if (latest != nil) {
         if (latest.length > 40) {
             NSLog(@"trim: %@", latest);
@@ -52,10 +41,10 @@
     }
 }
 
-- (IBAction)print:(id)sender {
+-(IBAction)print:(id)sender {
     NSLog(@"print");
 
-    NSString *latestPaste = self.latestPaste;
+    NSString *latestPaste = self.psMonitor.currentData;
 
     if (latestPaste != nil) {
         NSLog(@"Latest paste: %@", latestPaste);
@@ -63,4 +52,5 @@
         NSLog(@"Nothing in pasteboard");
     }
 }
+
 @end

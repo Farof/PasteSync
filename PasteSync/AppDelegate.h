@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PSMonitor.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -16,7 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet NSMenuItem *pasteLabel;
 
-@property (strong, nonatomic, readonly) NSString *latestPaste;
+@property (strong, nonatomic) PSMonitor *psMonitor;
 
 - (IBAction)print:(id)sender;
 
