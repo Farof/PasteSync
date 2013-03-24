@@ -11,9 +11,11 @@ namespace PasteSync
     {
         private System.ComponentModel.IContainer components = null;
         private NotifyIcon notifyIcon = null;
+        private PSMonitor psMonitor = null;
 
         public CustomApplicationcontext() {
-            InitializeContext();            
+            InitializeContext();
+            this.psMonitor = new PSMonitor();
         }
 
         private void InitializeContext()
