@@ -17,6 +17,7 @@ namespace PasteSync
         public CustomApplicationcontext() {
             InitializeContext();
             psMonitor = new PSMonitor();
+            psMonitor.DataChanged += new DataChangedEventHandler(psMonitor_DataChanged);
             updateLabel(psMonitor.latestData);
         }
 
@@ -57,6 +58,11 @@ namespace PasteSync
         private void updateLabel(String str)
         {
             printer.Text = normalizeString(str);
+        }
+
+        void psMonitor_DataChanged(object sender, DataChangedEvent e)
+        {
+            updateLabel(e.data);
         }
 
         private void Print_Click(object sender, EventArgs e)
