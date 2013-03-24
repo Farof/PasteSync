@@ -12,10 +12,12 @@ namespace PasteSync
         private System.ComponentModel.IContainer components = null;
         private NotifyIcon notifyIcon = null;
         private PSMonitor psMonitor = null;
+        private MenuItem printer = null;
 
         public CustomApplicationcontext() {
             InitializeContext();
-            this.psMonitor = new PSMonitor();
+            psMonitor = new PSMonitor();
+            updateLabel(psMonitor.latestData);
         }
 
         private void InitializeContext()
@@ -28,8 +30,7 @@ namespace PasteSync
             };
             notifyIcon.Icon = Properties.Resources.PasteSyncIcon;
 
-            //ContextMenuStrip contextMenu = new ContextMenuStrip();
-            MenuItem printer = new MenuItem("Print", Print_Click);
+            printer = new MenuItem("Print", Print_Click);
             MenuItem preferences = new MenuItem("Preferences", Preferences_Click);
             preferences.Enabled = false;
             MenuItem quit = new MenuItem("Quit", Quit_Click);
@@ -37,13 +38,25 @@ namespace PasteSync
             notifyIcon.ContextMenu.MenuItems.Add(printer);
             notifyIcon.ContextMenu.MenuItems.Add(preferences);
             notifyIcon.ContextMenu.MenuItems.Add(quit);
-
-            //notifyIcon.ContextMenu.Popup += ContextMenu_Popup;
         }
 
         void ContextMenu_Popup(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private String normalizeString(String str)
+        {
+            if (str.Length > 40)
+            {
+                str = str.Substring(0, 40) + "…";
+            }
+            return str;
+        }
+
+        private void updateLabel(String str)
+        {
+            printer.Text = normalizeString(str);
         }
 
         private void Print_Click(object sender, EventArgs e)
