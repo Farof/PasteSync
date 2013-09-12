@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PSMonitor.h"
+#import "PSServer.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -18,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet NSMenuItem *pasteLabel;
 
 @property (strong, nonatomic) PSMonitor *psMonitor;
+
+@property (strong, nonatomic) PSServer *psServer;
 
 -(IBAction)print:(id)sender;
 -(NSString *)normalizeString:(NSString *)str;

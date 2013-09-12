@@ -14,6 +14,7 @@
 @property (strong, nonatomic, readonly) NSString *currentData;
 @property (strong, nonatomic) NSString *latestData;
 
+-(PSMonitor *)initAndStart;
 -(void)startMonitoring;
 -(void)stopMonitoring;
 -(void)queryPasteboard;

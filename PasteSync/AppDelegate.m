@@ -14,6 +14,7 @@
 @synthesize statusMenu = _statusMenu;
 @synthesize pasteLabel = _pasteLabel;
 @synthesize psMonitor = _psMonitor;
+@synthesize psServer = _psServer;
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -21,11 +22,15 @@
 }
 
 -(void) awakeFromNib {
-    self.psMonitor = [[PSMonitor alloc] init];
+    self.psMonitor = [[PSMonitor alloc] initAndStart];
+    self.psServer = [[PSServer alloc] init];
 
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.statusBar.title = @"PS";
-    // self.statusBar.image =
+    //self.statusBar.title = @"PS";
+    NSImage *icon = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"pastesync" ofType:@"png"]];
+    [icon setSize:NSMakeSize(18, 18)];
+    [self.statusBar setImage:icon];
+    
     self.statusBar.menu = self.statusMenu;
     self.statusBar.highlightMode = YES;
 

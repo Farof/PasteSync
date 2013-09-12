@@ -19,8 +19,13 @@
     NSLog(@"init monitor");
 
     self.latestData = self.currentData;
-    [self startMonitoring];
 
+    return self;
+}
+
+-(PSMonitor *) initAndStart {
+    self = [self init];
+    [self startMonitoring];
     return self;
 }
 
