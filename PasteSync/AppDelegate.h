@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "PSMonitor.h"
 #import "PSServer.h"
+#import "PSClient.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -21,6 +22,8 @@
 @property (strong, nonatomic) PSMonitor *psMonitor;
 
 @property (strong, nonatomic) PSServer *psServer;
+
+@property (strong, nonatomic) PSClient *psClient;
 
 -(IBAction)print:(id)sender;
 -(NSString *)normalizeString:(NSString *)str;

@@ -15,6 +15,7 @@
 @synthesize pasteLabel = _pasteLabel;
 @synthesize psMonitor = _psMonitor;
 @synthesize psServer = _psServer;
+@synthesize psClient = _psClient;
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -23,7 +24,8 @@
 
 -(void) awakeFromNib {
     self.psMonitor = [[PSMonitor alloc] initAndStart];
-    self.psServer = [[PSServer alloc] init];
+    self.psServer = [[PSServer alloc] initAndStart];
+    self.psClient = [[PSClient alloc] init];
 
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     //self.statusBar.title = @"PS";

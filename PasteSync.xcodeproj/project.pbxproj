@@ -12,6 +12,7 @@
 		169E96DA16FE81C900DD2769 /* PSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 169E96D916FE81C900DD2769 /* PSMonitor.m */; };
 		16A5A9681719C64600CA7614 /* pastesync.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A5A9671719C64600CA7614 /* pastesync.png */; };
 		16A5A96B1719D03700CA7614 /* PSServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5A96A1719D03700CA7614 /* PSServer.m */; };
+		16D0009217F84A2100CD73A0 /* PSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D0009117F84A2100CD73A0 /* PSClient.m */; };
 		16E94C4E16FD0D0400154B80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E94C4D16FD0D0400154B80 /* Cocoa.framework */; };
 		16E94C5816FD0D0400154B80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E94C5616FD0D0400154B80 /* InfoPlist.strings */; };
 		16E94C5A16FD0D0400154B80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E94C5916FD0D0400154B80 /* main.m */; };
@@ -39,6 +40,8 @@
 		16A5A9671719C64600CA7614 /* pastesync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pastesync.png; sourceTree = "<group>"; };
 		16A5A9691719D03700CA7614 /* PSServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSServer.h; sourceTree = "<group>"; };
 		16A5A96A1719D03700CA7614 /* PSServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSServer.m; sourceTree = "<group>"; };
+		16D0009017F84A2100CD73A0 /* PSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSClient.h; sourceTree = "<group>"; };
+		16D0009117F84A2100CD73A0 /* PSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSClient.m; sourceTree = "<group>"; };
 		16E94C4A16FD0D0400154B80 /* PasteSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasteSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E94C4D16FD0D0400154B80 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16E94C5016FD0D0400154B80 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				169E96D916FE81C900DD2769 /* PSMonitor.m */,
 				16A5A9691719D03700CA7614 /* PSServer.h */,
 				16A5A96A1719D03700CA7614 /* PSServer.m */,
+				16D0009017F84A2100CD73A0 /* PSClient.h */,
+				16D0009117F84A2100CD73A0 /* PSClient.m */,
 			);
 			path = PasteSync;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				16E94C6116FD0D0400154B80 /* AppDelegate.m in Sources */,
 				169E96DA16FE81C900DD2769 /* PSMonitor.m in Sources */,
 				16A5A96B1719D03700CA7614 /* PSServer.m in Sources */,
+				16D0009217F84A2100CD73A0 /* PSClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
