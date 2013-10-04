@@ -1,36 +1,44 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+#include "libpastesync.h"
 
-#define BUFFER_SIZE 256
-#define MAX_CLIPBOARD_SIZE 1024 * 256
 #define INPUT_PRE "echo -n \""
 #define INPUT_POST "\" | xclip -selection clipboard"
-#define CHAR_SIZE sizeof(char)
 
 void println();
-int output_clipboard();
+int get_pipe_output(char*, char**);
+int output_clipboard(int);
 int set_clipboard(char*);
 
 void usage(char* argv[]) {
-  fprintf(stderr, "Usage:\n\t%s [-o]\t// output clipboard content\n\t%s -i <data>\t// set clipboard content\n", argv[0], argv[0]);
+  fprintf(stdout, "Usage:\t%s [-onh] [-i <data>]\n", argv[0]);
+  fprintf(stdout, "\t-o\t\toutput clipboard content\n");
+  fprintf(stdout, "\t-n\t\tno newline after output\n");
+  fprintf(stdout, "\t-i <data>\tset clipboard content\n");
+  fprintf(stdout, "\t-h\t\tdisplay this help\n");
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   enum {
     INPUT_MODE,
     OUPUT_MODE
   } mode = OUPUT_MODE;
   int EXIT_CODE = EXIT_SUCCESS;
   int opt;
+  int nflag = 0;
   char* input;
 
-  while ((opt = getopt(argc, argv, "i:")) != -1) {
+  while ((opt = getopt(argc, argv, "ni:")) != -1) {
     switch (opt) {
       case 'i':
         mode = INPUT_MODE;
         input = optarg;
+        break;
+      case 'n':
+        nflag = 1;
+        break;
+      case 'h':
+        usage(argv);
+        exit(EXIT_SUCCESS);
         break;
       default:
         usage(argv);
@@ -41,7 +49,7 @@ int main(int argc, char* argv[]) {
   if (mode == INPUT_MODE) {
     EXIT_CODE = set_clipboard(input);
   } else if (mode == OUPUT_MODE) {
-    EXIT_CODE = output_clipboard();
+    EXIT_CODE = output_clipboard(nflag);
   }
 
   exit(EXIT_CODE);
@@ -51,43 +59,22 @@ void println() {
   printf("\n");
 }
 
-int output_clipboard() {
+int output_clipboard(int nflag) {
   char *data = NULL;
-  char *new_data;
-  char buffer[BUFFER_SIZE];
-  int new_size, i = 0;
-  int data_remaining = 0;
-  FILE *fd = popen("xclip -o -selection clipboard", "r");
+  int ret;
 
-  while (fgets(buffer, BUFFER_SIZE, fd) != 0) {
-    i++;
-    new_size = BUFFER_SIZE * i;
+  ret = get_pipe_output("xclip -o -selection clipboard", &data);
 
-    if (new_size > MAX_CLIPBOARD_SIZE) {
-      new_size = MAX_CLIPBOARD_SIZE;
-      data_remaining = 1;
-    }
-    
-    if (data == NULL) {
-      new_data = malloc(new_size);
-    } else {
-      new_data = realloc(data, new_size);
-    }
-
-    if (new_data == NULL) {
-      printf("abort, abort!\n");
-      return EXIT_FAILURE;
-    } else {
-      data = new_data;
-      sprintf(data, "%s%s", data, buffer);
-    }
-
-    if (data_remaining == 1) break;
+  if (ret == EXIT_FAILURE) {
+    fprintf(stderr, "failed reading clipboard\n");
+    return EXIT_FAILURE;
   }
-  pclose(fd);
 
-  fprintf(stdout, "%s\n", data);
-  /*printf("flushed: %s\n", data_remaining ? "FALSE" : "TRUE");*/
+  if (nflag) {
+    fprintf(stdout, "%s", data);
+  } else {
+    fprintf(stdout, "%s\n", data);
+  }
 
   free(data);
 

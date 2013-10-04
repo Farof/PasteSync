@@ -3,16 +3,16 @@
 CC=gcc
 CFLAGS=-W -Wall -pedantic
 LDFLAGS=
-EXEC=pastesync
+EXEC=pastesync pastesyncd
 SRC=$(wildcard *.c)
 OBJ=$(SRC:.c=.o)
 
 all: $(EXEC)
 
-pastesyncd: $(OBJ)
+pastesyncd: pastesyncd.o libpastesync.o
 	@$(CC) -o $@ $^ $(CFLAGS)
 
-pastesync: $(OBJ)
+pastesync: pastesync.o libpastesync.o
 	@$(CC) -o $@ $^ $(CFLAGS)
 
 %.o: %.c
