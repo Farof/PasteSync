@@ -17,7 +17,7 @@ namespace PasteSync
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ApplicationContext applicationContext = new CustomApplicationcontext();
+            ApplicationContext applicationContext = new PasteSync();
             Application.Run(applicationContext);
         }
     }

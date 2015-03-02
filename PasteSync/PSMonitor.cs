@@ -8,17 +8,16 @@ using System.Windows.Forms;
 
 namespace PasteSync
 {
-    public class DataChangedEvent : EventArgs
+    public class DataChangedEventArgs : EventArgs
     {
         public String data = null;
 
-        public DataChangedEvent(String _data)
-        {
+        public DataChangedEventArgs(String _data) {
             data = _data;
         }
     }
 
-    public delegate void DataChangedEventHandler(object sender, DataChangedEvent e);
+    public delegate void DataChangedEventHandler(object sender, DataChangedEventArgs e);
 
     class PSMonitor
     {
@@ -27,8 +26,7 @@ namespace PasteSync
         private int timerLooptime = 1000;
         public event DataChangedEventHandler DataChanged;
 
-        public PSMonitor()
-        {
+        public PSMonitor() {
             latestData = this.getCurrentData();
 
             timer.Interval = timerLooptime;
@@ -36,34 +34,27 @@ namespace PasteSync
             startMonitor();
         }
 
-        private void startMonitor()
-        {
-            if (!timer.Enabled)
-            {
+        private void startMonitor() {
+            if (!timer.Enabled) {
                 timer.Start();
             }
         }
 
-        private void stopMonitor()
-        {
-            if (timer.Enabled)
-            {
+        private void stopMonitor() {
+            if (timer.Enabled) {
                 timer.Stop();
             }
         }
 
-        void timer_Tick(object sender, EventArgs e)
-        {
+        void timer_Tick(object sender, EventArgs e) {
             String newData = getCurrentData();
-            if (newData != latestData)
-            {
+            if (newData != latestData) {
                 latestData = newData;
-                DataChanged(this, new DataChangedEvent(newData));
+                DataChanged(this, new DataChangedEventArgs(newData));
             }
         }
 
-        private String getCurrentData()
-        {
+        private String getCurrentData() {
             return Clipboard.GetText();
         }
     }

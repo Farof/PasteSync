@@ -11,6 +11,7 @@
     <AssemblyName>PasteSync</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -49,6 +49,13 @@
   <PropertyGroup>
     <ApplicationIcon>resources\PasteSync.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,10 +69,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomApplicationcontext.cs" />
+    <Compile Include="Forms\TrayIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayIcon.Designer.cs">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs" />
+    <Compile Include="Forms\DevicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DevicesForm.Designer.cs">
+      <DependentUpon>DevicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDevice.cs" />
+    <Compile Include="PasteSync.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PSMonitor.cs" />
+    <EmbeddedResource Include="Forms\TrayIcon.resx">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DevicesForm.resx">
+      <DependentUpon>DevicesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -108,6 +135,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\PasteSync.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Bonjour">
+      <Guid>{18FBED6D-F2B7-4EC8-A4A4-46282E635308}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\status-offlune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\status-invisible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\status-offline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\status-online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\status-visible.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

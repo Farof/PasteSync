@@ -121,4 +121,16 @@
   <data name="PasteSyncIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\PasteSync.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="status_invisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\status-invisible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_offline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\status-offline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_online" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\status-online.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\status-visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
